@@ -69,6 +69,7 @@ class ListingsController < ApplicationController
     def set_form_vars
       @categories = Category.all
       @conditions = Listing.conditions.keys
+
     end
 
     def authorize_user
@@ -80,6 +81,6 @@ class ListingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def listing_params
-      params.require(:listing).permit(:title, :description, :condition, :price, :sold, :user_id, :category_id)
+      params.require(:listing).permit(:title, :description, :condition, :price, :sold, :user_id, :category_id, :picture)
     end
 end

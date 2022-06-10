@@ -1,5 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+<div class="field">
+  <% if @listing.picture.attached? %>
+    <%= image_tag @listing.picture, alt: @listing.title %>
+  <% else %>
+    <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkIvZUsKDcRWcAKzteqsooUPNSloduC2ox7PmeFNPw3aT4i1-C", alt: @listing.title %>    
+  <% end %>
+</div>
+
 <p>
   <strong>Title:</strong>
   <%= @listing.title %>
